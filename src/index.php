@@ -44,6 +44,23 @@ try {
 
 <!-- ================================================================================ -->
 
+<?php
+    require_once('constants.php');
+
+    $name = '';
+    if(isset($_POST['name'])) {
+        $name = $_POST['name'];
+    }
+
+    $message = '';
+    if(mb_strlen($name) > MAX_NAME_LENGTH) {
+        $message = '名前は'.MAX_NAME_LENGTH.'文字以内で入力してください。';
+    }
+
+?>
+
+<!-- =================================================================================== -->
+
 <html>
     <head>
         <meta charset="UTF-8">
@@ -52,7 +69,11 @@ try {
 
 <!-------------------------------------------------------------------------------------------- -->
 
-
+<h1>定数のサンプル</h1>
+<form action="" method="POST">
+    <label>名前を入力してください：</label><input type="text" name="name" placeholder="10文字以内で入力してください" size="20" value="<?php echo $name; ?>">
+    <div style="color: red"><?php echo $message; ?></div>
+    <button type="submit">送信</button>
 
 <!-------------------------------------------------------------------------------------------- -->
 
