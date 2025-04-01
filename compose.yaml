@@ -1,0 +1,24 @@
+services:
+  db:
+    image: mysql:8.3.0
+    container_name: mysql_container
+    environment:
+      MYSQL_ROOT_PASSWORD: root-pass
+      MYSQL_DATABASE: test-db
+      MYSQL_USER: test-user
+      MYSQL_PASSWORD: test-pass
+    volumes:
+      - db-data:/var/lib/mysql
+
+  php:
+    build: .
+    container_name: php-apache_container
+    depends_on:
+      - db
+    ports:
+      - "80:80"
+    volumes:
+      - ./src:/var/www/html
+
+volumes:
+  db-data:
