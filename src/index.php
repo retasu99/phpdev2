@@ -59,15 +59,15 @@ try {
 <?php
     
     echo "1回目<br>";
-    include("external_file.php");
+    require_once("external_file.php");
     echo "<hr>";
     
     echo "2回目<br>";
-    include("externall_file.php");
+    require_once("external_file.php");
     echo "<hr>";
 
     echo "3回目<br>";
-    include("external_file.php");   
+    require_once("external_file.php");   
 
     // echo "<hr>";
 
