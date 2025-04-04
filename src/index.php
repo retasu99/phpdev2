@@ -58,18 +58,13 @@ try {
 
 <?php
     
-    echo "1回目<br>";
-    require_once("external_file.php");
-    echo "<hr>";
-    
-    echo "2回目<br>";
-    require_once("external_file.php");
-    echo "<hr>";
+    function sum($x, $y) {
+        return $x + $y;
+    }
 
-    echo "3回目<br>";
-    require_once("external_file.php");   
-
-    // echo "<hr>";
+    echo sum(1, 2);
+    echo "<br>";
+    echo sum(4, 10);
 
 ?>
 
