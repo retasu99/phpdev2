@@ -45,16 +45,16 @@ try {
 <!-- ================================================================================ -->
 
 <?php
-    $title = "strlen関数サンプル";
+    $email = "test@email.com";
+    $domain = strstr($email, '@');
+    echo $domain.'<br>';
 
-    $sentence = '';
-    $message = '';
-    if (isset($_GET['sentence'])) {
-        $sentence = $_GET['sentence'];
-        $strlen = strlen($sentence);
-        $mb_strlen = mb_strlen($sentence);
-        $message = "{$strlen}バイト、{$mb_strlen}文字です。";
-    }
+    $domain = substr($domain, 1);
+    echo $domain.'<br>';
+
+    $domain = str_replace('@', '', $domain);
+    echo $domain.'<br>';
+
 ?>
 
 <!-- =================================================================================== -->
@@ -65,15 +65,6 @@ try {
         <meta charset="UTF-8">
     </head>
     <body>
-        <h1><?php print($title); ?></h1>
-
-        <label>入力した文字列のバイト数と文字数を表示します。</label>
-        <form action="strlen.php" method="GET">
-            <textarea name="sentence" rows="10" cols="50"><?php print($sentence); ?></textarea>
-            <br>
-            <button type="submit">送信</button>
-        </form>
-        <div><?php print($message); ?></div>
 
 <!-------------------------------------------------------------------------------------------- -->
 
