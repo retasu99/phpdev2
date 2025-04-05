@@ -44,43 +44,51 @@ try {
 
 <!-- ================================================================================ -->
 
+<?php
+    function calc_bmi($height_cm, $weight) {
+        $height_m = $height_cm / 100;
+        $bmi = $weight / ($height_m * $height_m);
+        return $bmi;
+    }
+?>
 
+<?php
+    $title = 'ユーザー定義関数サンプル1';
+    $bmi;
+
+    if (isset($_GET['height_cm']) && isset($_GET['weight'])) {
+        $bmi = calc_bmi($_GET['height_cm'], $_GET['weight']);
+    }
+?>
 
 <!-- =================================================================================== -->
 
 <!DOCTYPE html>
 <html lang="ja">
     <head>
-        <title>参加者内訳</title>
+        <title><?php print($title); ?></title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
 
 <!-------------------------------------------------------------------------------------------- -->
+      <h1><?php print($title); ?></h1>
+      <h2>BMI指数を表示します</h2>
 
-<?php
-    $now = strtotime("now");
-    $tomorrow = strtotime("tomorrow");
-    $lastday = strtotime("last day of next month");
-    $aprilfool = strtotime("2020/4/1");
-    $sunday = strtotime("next sunday");
-    $plus5day = strtotime("+5 day");
+      <form method="get">
+        <label>身長(cm):</label><input type="text" name="height_cm">
+        <br>
+        <label>体重(kg):</label><input type="text" name="weight">
+        <br>
+        <button>計算</button>
+      </form>
 
-    echo date("Y/m/d", $now);
-    echo "<hr>";
-    echo date("Y/m/d", $tomorrow);
-    echo "<hr>";
-    echo date("Y/m/d", $lastday);
-    echo "<hr>";
-    echo date("Y/m/d", $aprilfool);
-    echo "<hr>";
-    echo date("Y/m/d", $sunday);
-    echo "<hr>";
-    echo date("Y/m/d", $plus5day);
-    echo "<hr>";
-?>
-
+      <?php
+        if (isset($bmi)) {
+            echo "BMI指数は{$bmi}です。";
+        }
+      ?>
 <!-------------------------------------------------------------------------------------------- -->
 
     </body>
