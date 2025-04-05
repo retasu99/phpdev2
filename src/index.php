@@ -45,15 +45,17 @@ try {
 <!-- ================================================================================ -->
 
 <?php
-    $email = "test@email.com";
-    $domain = strstr($email, '@');
-    echo $domain.'<br>';
+    $val = 19.8765;
 
-    $domain = substr($domain, 1);
-    echo $domain.'<br>';
+    echo $val;
+    echo "<br>";
+    echo round($val);
+    echo "<hr>";
 
-    $domain = str_replace('@', '', $domain);
-    echo $domain.'<br>';
+    echo round($val, 3);
+    echo "<hr>";
+
+    echo round($val, 3, PHP_ROUND_HALF_EVEN);
 
 ?>
 
