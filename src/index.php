@@ -44,33 +44,28 @@ try {
 
 <!-- ================================================================================ -->
 
-<?php
-    $val = 19.8765;
 
-    echo $val;
-    echo "<br>";
-    echo round($val);
-    echo "<hr>";
-
-    echo round($val, 3);
-    echo "<hr>";
-
-    echo round($val, 3, PHP_ROUND_HALF_EVEN);
-
-?>
 
 <!-- =================================================================================== -->
 
-<html>
+<!DOCTYPE html>
+<html lang="ja">
     <head>
-        <title><?php print($title); ?></title>
+        <title>参加者内訳</title>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
 
 <!-------------------------------------------------------------------------------------------- -->
 
+<?php
+    $arr = [ 10, "hello", [1, 2, 3]];
+    echo count($arr);
+    echo "<hr>";
 
+    echo count($arr, COUNT_RECURSIVE);
+?>
 
 <!-------------------------------------------------------------------------------------------- -->
 
