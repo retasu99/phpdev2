@@ -60,12 +60,25 @@ try {
 <!-------------------------------------------------------------------------------------------- -->
 
 <?php
-    $arr = [1, 2, 3, 4, 5];
-    print_r($arr);
-    echo "<br>";
+    $now = strtotime("now");
+    $tomorrow = strtotime("tomorrow");
+    $lastday = strtotime("last day of next month");
+    $aprilfool = strtotime("2020/4/1");
+    $sunday = strtotime("next sunday");
+    $plus5day = strtotime("+5 day");
 
-    shuffle($arr);
-    print_r($arr);
+    echo date("Y/m/d", $now);
+    echo "<hr>";
+    echo date("Y/m/d", $tomorrow);
+    echo "<hr>";
+    echo date("Y/m/d", $lastday);
+    echo "<hr>";
+    echo date("Y/m/d", $aprilfool);
+    echo "<hr>";
+    echo date("Y/m/d", $sunday);
+    echo "<hr>";
+    echo date("Y/m/d", $plus5day);
+    echo "<hr>";
 ?>
 
 <!-------------------------------------------------------------------------------------------- -->
